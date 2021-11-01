@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 @Repository
 public class MemberRepository {
 
-    // EntityMager 주입
+    // EntityMager 주입, 여러 개가 쓰이므로 하나씩 주입 해준다.
     @PersistenceContext
     private EntityManager em;
 
