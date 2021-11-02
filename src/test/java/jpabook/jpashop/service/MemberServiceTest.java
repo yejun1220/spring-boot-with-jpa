@@ -9,7 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.fail;
-import static org.assertj.core.api.InstanceOfAssertFactories.PATH;
 
 @SpringBootTest
 @Transactional
@@ -34,8 +33,8 @@ class MemberServiceTest {
         Assertions.assertThat(member).isEqualTo(memberService.findOne(saveId));
     }
 
-    @Test
-    public void 중복_회원_조회() throws Exception {
+    @Test // junit4의 @Test excepted를 통해 간단하게 표현 가능하다.
+   public void 중복_회원_조회() throws Exception {
         // given
         Member member1 = new Member();
         member1.setName("Lim");
