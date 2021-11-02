@@ -18,7 +18,6 @@ public class MemberRepository {
     // EntityManger 주입, 여러 개가 쓰이므로 하나씩 주입 해준다.
 //    @PersistenceContext
     // 스프링 부트에서 스프링 JPA를 쓰면 @Autowired를 @PersistenceContext로 사용할 수 있다.
-
     private final EntityManager em;
 
 //    @RequiredArgsConstructor로 생략 가능
