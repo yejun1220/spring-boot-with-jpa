@@ -48,18 +48,4 @@ public class Order {
         this.delivery = delivery;
         delivery.setOrder(this);
     }
-
-    // == 생성 메서드 == //
-    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
-        Order order = new Order();
-        order.setMember(member); // 멤버 저장
-        order.setDelivery(delivery); // 배달 저장
-        for (OrderItem orderItem : orderItems) {
-            order.addOrderItem(orderItem);
-        } // 품목 저장
-        order.setStatus(OrderStatus.ORDER); // 상태 저장
-        order.setOrderDate(LocalDateTime.now()); // 시간 저장
-
-        return order;
-    }
 }
