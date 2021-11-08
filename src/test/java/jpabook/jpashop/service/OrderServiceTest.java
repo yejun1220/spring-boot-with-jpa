@@ -7,7 +7,6 @@ import jpabook.jpashop.domain.OrderStatus;
 import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.OrderRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 
+import static org.assertj.core.api.Assertions.fail;
 import static org.springframework.test.util.AssertionErrors.assertEquals;
 
 @SpringBootTest
@@ -56,7 +56,16 @@ class OrderServiceTest {
 
     @Test
     public void 상품주문_재고수량초과() throws Exception {
+        // given
+        Member member = createMember();
+        Item item = createBook("시골 JPA", 10000, 10); //이름, 가격, 재고
+        int orderCount = 11; //재고보다 많은 수량
 
+        // when
+        orderService.order(member.getId(), item.getId(), orderCount);
+
+        // then
+        fail("재고 수량 부족 예외가 발생해야 한다.");
     }
 
     private Member createMember() {
