@@ -1,6 +1,8 @@
 package jpabook.jpashop.domain.item;
 
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.DiscriminatorValue;
@@ -13,4 +15,5 @@ public class Book extends Item {
 
     private String anthor;
     private String isbn;
+
 }
