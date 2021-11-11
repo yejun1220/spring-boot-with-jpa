@@ -13,7 +13,7 @@ import javax.persistence.Entity;
 @Getter @Setter
 public class Book extends Item {
 
-    private String anthor;
+    private String author;
     private String isbn;
 
 }
