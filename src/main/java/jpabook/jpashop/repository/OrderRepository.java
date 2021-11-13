@@ -40,7 +40,7 @@ public class OrderRepository {
             else
                 jpql += " and";
 
-            jpql += "o.status =:status";
+            jpql += " o.status = :status";
         }
 
         if(hasText(orderSearch.getMemberName())) {
@@ -51,7 +51,7 @@ public class OrderRepository {
             else
                 jpql += " and";
 
-            jpql += "o.name :=name";
+            jpql += " m.name like :name";
         }
 
         TypedQuery<Order> query = em.createQuery(jpql, Order.class)
