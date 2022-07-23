@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class MemberApiController {
 
-    private static String s = "ss";
     private final MemberService memberService;
 
     @GetMapping("/api/v1/members")
