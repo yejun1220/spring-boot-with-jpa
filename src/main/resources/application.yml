@@ -12,6 +12,8 @@ spring:
       hibernate:
 #        show_sql: true # System.out.print
         format_sql: true
+        # 지연 로딩마다 한번에 가져올 in query parameter 갯수
+        default_batch_fetch_size: 100
 
 logging:
   level:
