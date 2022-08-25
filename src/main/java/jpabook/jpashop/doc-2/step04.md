@@ -62,3 +62,7 @@ OneToOne EAGAR(반대편 EAGAR)
 - 페이징 시도시 warning 로그와 함께 sql문에는 페이징 쿼리가 존재하지 않는 것을 알 수 있다.
 - 메모리에서 페이징 처리를 한다.(데이터가 많을 경우 out of memory 발생)
 - 컬렉션 페치 조인은 1개만 사용해야 한다. 한 모델에 2개의 컬렉션이든, 컬렉션 안에 컬렉션 형태든
+
+## 한계 돌파
+- hibernate.default_batch_fetch_size: 글로벌 설정
+- fetchsize: 개별 설정
